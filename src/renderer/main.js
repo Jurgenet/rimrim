@@ -5,8 +5,14 @@ import App from './App'
 import router from './router'
 import store from './store'
 
+/**
+ * Plugins
+ */
+import { db } from '@/plugins/firebase'
+
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
 Vue.http = Vue.prototype.$http = axios
+Vue.fdb = Vue.prototype.$fdb = db
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
